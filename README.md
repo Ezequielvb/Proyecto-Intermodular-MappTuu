@@ -11,14 +11,14 @@
 
 1. [Personas del equipo](#1-personas-del-equipo)
 2. [Qué es MapTuu](#2-qué-es-maptuu)
-3. [Arquitectura del ecosistema](#3-arquitectura-del-ecosistema)
-4. [Enlaces a repositorios de código](#4-enlaces-a-repositorios-de-código)
-5. [Despliegue y artefactos en producción](#5-despliegue-y-artefactos-en-producción)
-6. [Documentación técnica (Confluence)](#6-documentación-técnica-confluence)
-7. [Documentación unificada (PDF) y Jira](#7-documentación-unificada-pdf-y-jira)
-8. [Documentación de código (Compodoc)](#8-documentación-de-código-compodoc)
-9. [Aportación por módulo](#9-aportación-por-módulo)
-10. [Capturas e imágenes](#10-capturas-e-imágenes)
+3. [Capturas e imágenes del producto](#3-capturas-e-imágenes-del-producto)
+4. [Arquitectura del ecosistema](#4-arquitectura-del-ecosistema)
+5. [Enlaces a repositorios de código](#5-enlaces-a-repositorios-de-código)
+6. [Despliegue y artefactos en producción](#6-despliegue-y-artefactos-en-producción)
+7. [Documentación técnica (Confluence)](#7-documentación-técnica-confluence)
+8. [Documentación unificada (PDF) y Jira](#8-documentación-unificada-pdf-y-jira)
+9. [Documentación de código (Compodoc)](#9-documentación-de-código-compodoc)
+10. [Aportación por módulo](#10-aportación-por-módulo)
 11. [Pendientes y limitaciones conocidas](#11-pendientes-y-limitaciones-conocidas)
 
 ---
@@ -81,9 +81,35 @@ flowchart TB
 
 Patrón de datos (web + API): **lecturas** en cliente con Firestore; **escrituras y reglas de dominio** vía HTTP a la API con token Firebase.
 
+Las **capturas de pantalla** del producto (requisito de la guía del centro) están en la [sección 3](#3-capturas-e-imágenes-del-producto), **antes** de la aportación por módulo.
+
 ---
 
-## 3. Arquitectura del ecosistema
+## 3. Capturas e imágenes del producto
+
+Capturas de la aplicación (guía del centro: imágenes en el repo, enlazadas desde la explicación del producto). Estado actual:
+
+| Imagen sugerida | Estado |
+|-----------------|--------|
+| Landing / listado actividades | **Pendiente** — añadir en `docs/img/` |
+| Mapa (web) | **Pendiente** |
+| Detalle actividad + mapa | **Pendiente** |
+| Panel admin / reportes | **Pendiente** |
+| App Android | **Pendiente** |
+
+Cuando subáis los PNG, enlazadlos aquí (ejemplo):
+
+```markdown
+![Landing](docs/img/01-landing.png)
+![Listado de actividades](docs/img/02-listado-actividades.png)
+![Mapa web](docs/img/03-mapa-web.png)
+```
+
+Instrucciones: [docs/img/README.md](docs/img/README.md).
+
+---
+
+## 4. Arquitectura del ecosistema
 
 Documentación ampliada en Confluence: [01 - Arquitectura general](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/24150017) y [08 - Repositorios GitHub](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/27000833).
 
@@ -98,7 +124,7 @@ Documentación ampliada en Confluence: [01 - Arquitectura general](https://maptu
 
 ---
 
-## 4. Enlaces a repositorios de código
+## 5. Enlaces a repositorios de código
 
 | Repositorio | Enlace | Visibilidad | Notas |
 |-------------|--------|-------------|-------|
@@ -111,7 +137,7 @@ Este repositorio (**Proyecto-Intermodular-MappTuu**) es solo documentación de e
 
 ---
 
-## 5. Despliegue y artefactos en producción
+## 6. Despliegue y artefactos en producción
 
 | Artefacto | URL | Notas |
 |-----------|-----|-------|
@@ -150,7 +176,7 @@ pip install -r requirements.txt && python export_firestore_to_powerbi.py
 
 ---
 
-## 6. Documentación técnica (Confluence)
+## 7. Documentación técnica (Confluence)
 
 Espacio del proyecto: **https://maptuu.atlassian.net/wiki/spaces/MAP**
 
@@ -173,7 +199,7 @@ Espacio del proyecto: **https://maptuu.atlassian.net/wiki/spaces/MAP**
 
 ---
 
-## 7. Documentación unificada (PDF) y Jira
+## 8. Documentación unificada (PDF) y Jira
 
 | Entregable | Estado | Enlace / notas |
 |------------|--------|----------------|
@@ -182,7 +208,7 @@ Espacio del proyecto: **https://maptuu.atlassian.net/wiki/spaces/MAP**
 
 ---
 
-## 8. Documentación de código (Compodoc)
+## 9. Documentación de código (Compodoc)
 
 | | |
 |---|---|
@@ -196,7 +222,7 @@ Compodoc documenta componentes, servicios, guards y pipes del frontend Angular a
 
 ---
 
-## 9. Aportación por módulo
+## 10. Aportación por módulo
 
 Plantilla según el repositorio del centro. Donde no hay evidencia en el repositorio, se indica explícitamente.
 
@@ -320,22 +346,6 @@ Plantilla según el repositorio del centro. Donde no hay evidencia en el reposit
 | Relaciones Power BI | Por `id`, `activityId`, `planId`, `userId`, `activityTypeId` (README del repo Python) |
 
 **Limitaciones:** no hay capturas de informes Power BI versionadas en el repo; el equipo puede añadirlas en `docs/img/powerbi/` (pendiente).
-
----
-
-## 10. Capturas e imágenes
-
-La guía del centro exige **imágenes en el repositorio**. Estado actual:
-
-| Imagen sugerida | Estado |
-|-----------------|--------|
-| Landing / listado actividades | **Pendiente** — añadir en `docs/img/` |
-| Mapa (web) | **Pendiente** |
-| Detalle actividad + mapa | **Pendiente** |
-| Panel admin / reportes | **Pendiente** |
-| App Android | **Pendiente** |
-
-Instrucciones: [docs/img/README.md](docs/img/README.md).
 
 ---
 
