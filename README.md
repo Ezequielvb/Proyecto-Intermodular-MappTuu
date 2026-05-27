@@ -10,16 +10,17 @@
 ## Índice de contenidos
 
 1. [Personas del equipo](#1-personas-del-equipo)
-2. [Qué es MapTuu](#2-qué-es-maptuu)
+2. [Explicación del proyecto](#2-explicación-del-proyecto)
 3. [Capturas e imágenes del producto](#3-capturas-e-imágenes-del-producto)
-4. [Arquitectura del ecosistema](#4-arquitectura-del-ecosistema)
+4. [Qué aporta el proyecto en cada módulo](#4-qué-aporta-el-proyecto-en-cada-módulo)
 5. [Enlaces a repositorios de código](#5-enlaces-a-repositorios-de-código)
-6. [Despliegue y artefactos en producción](#6-despliegue-y-artefactos-en-producción)
-7. [Documentación técnica (Confluence)](#7-documentación-técnica-confluence)
-8. [Documentación unificada (PDF) y Jira](#8-documentación-unificada-pdf-y-jira)
+6. [Enlace al artefacto en producción](#6-enlace-al-artefacto-en-producción)
+7. [Documentación unificada del proyecto (PDF)](#7-documentación-unificada-del-proyecto-pdf)
+8. [Resumen de la gestión en Jira (PDF)](#8-resumen-de-la-gestión-en-jira-pdf)
 9. [Documentación de código (Compodoc)](#9-documentación-de-código-compodoc)
-10. [Aportación por módulo](#10-aportación-por-módulo)
-11. [Pendientes y limitaciones conocidas](#11-pendientes-y-limitaciones-conocidas)
+10. [Documentación técnica (Confluence) — complemento](#10-documentación-técnica-confluence--complemento)
+11. [Detalle ampliado por módulo](#11-detalle-ampliado-por-módulo)
+12. [Pendientes y limitaciones conocidas](#12-pendientes-y-limitaciones-conocidas)
 
 ---
 
@@ -34,7 +35,7 @@ Organización GitHub del código: [Jose-AntonioT8](https://github.com/Jose-Anton
 
 ---
 
-## 2. Qué es MapTuu
+## 2. Explicación del proyecto
 
 **MapTuu** es una plataforma para **descubrir, crear y compartir actividades** y **planes** (itinerarios geolocalizados): turismo y ocio cotidiano en web, con **API REST**, **app Android** (visor) y **exportación de datos** para informes (Power BI).
 
@@ -80,36 +81,39 @@ Capturas de la aplicación (guía del centro: imágenes embebidas directamente e
 
 ### Mapa (web)
 
-![Mapa web](docs/img/02-mapa-web.png)
+Pendiente de subir `docs/img/02-mapa-web.png`.
 
 ### Detalle de actividad + mapa
 
-![Detalle actividad y mapa](docs/img/03-detalle-actividad-mapa.png)
+Pendiente de subir `docs/img/03-detalle-actividad-mapa.png`.
 
 ### Panel admin / reportes
 
-![Panel admin y reportes](docs/img/04-panel-admin-reportes.png)
+Pendiente de subir `docs/img/04-panel-admin-reportes.png`.
 
 ### App Android
 
-![App Android](docs/img/05-app-android.png)
+Pendiente de subir `docs/img/05-app-android.png`.
 
 Instrucciones: [docs/img/README.md](docs/img/README.md).
 
 ---
 
-## 4. Arquitectura del ecosistema
+## 4. Qué aporta el proyecto en cada módulo
 
-Documentación ampliada en Confluence: [01 - Arquitectura general](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/24150017) y [08 - Repositorios GitHub](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/27000833).
+Resumen de aportación por módulo para evaluación. El desarrollo detallado con evidencias está en la [sección 11](#11-detalle-ampliado-por-módulo).
 
-| Capa | Repositorio | Rama principal | Despliegue |
-|------|-------------|----------------|------------|
-| Frontend SPA | vercelAngularMappTuu | `frontend` | Vercel |
-| API REST | vercelNodeMappTuu | `main` | Vercel |
-| Android | androidMappTuu | `main` | APK en repo / build local |
-| BI / datos | PythonMappTuu | `main` | Ejecución local |
+| Módulo (profesorado) | Aportación en MapTuu |
+|---|---|
+| Acceso a datos — Juan Antonio García Gómez | Firestore, autenticación Firebase y exportación de datos |
+| Programación multimedia y dispositivos móviles — David Hormigo Ramírez | App Android (visor) con Compose, Room, Retrofit y mapas |
+| Programación de servicios y procesos — David Hormigo Ramírez | API REST, scripts de proceso y flujo de exportación Python |
+| Desarrollo de interfaces — Carmen Campos Fernández | SPA Angular responsive, i18n, mapas, flujo de usuario |
+| Servidores y APIs — Juan Antonio García Gómez | Despliegue Vercel, Swagger, seguridad y CORS |
+| Empresa e iniciativa emprendedora II — Rosa Carmen Alcázar Rosal | Propuesta de valor, páginas informativas y enfoque de producto |
+| Sistemas de gestión empresarial — Miguel Ángel Ronda Carracao | Exportación CSV para análisis e integración con Power BI |
 
-**Mayo 2026:** la rama `spec-drive-delvelopment` se integró en `frontend` mediante [PR #11](https://github.com/Jose-AntonioT8/vercelAngularMappTuu/pull/11) (SDD, mapa detalle actividad). El commit de IA con filtrado contextual por pregunta fue **revertido** en `frontend` (`42fa740`); producción mantiene el asistente `/ia` con el comportamiento anterior.
+Para revisión de arquitectura por capas/repositorios: [Anexo de Confluence](#10-documentación-técnica-confluence--complemento).
 
 ---
 
@@ -126,7 +130,7 @@ Este repositorio (**Proyecto-Intermodular-MappTuu**) es solo documentación de e
 
 ---
 
-## 6. Despliegue y artefactos en producción
+## 6. Enlace al artefacto en producción
 
 | Artefacto | URL | Notas |
 |-----------|-----|-------|
@@ -163,9 +167,37 @@ git clone https://github.com/Jose-AntonioT8/PythonMappTuu.git
 pip install -r requirements.txt && python export_firestore_to_powerbi.py
 ```
 
+## 7. Documentación unificada del proyecto (PDF)
+
+| Entregable | Estado | Enlace / notas |
+|------------|--------|----------------|
+| **PDF unificado (Confluence)** | **Pendiente en este repo** | Exportar manualmente el espacio MAP desde Confluence (PDF) y subirlo a `docs/pdf/` — ver [docs/PENDIENTES.md](docs/PENDIENTES.md) |
+
 ---
 
-## 7. Documentación técnica (Confluence)
+## 8. Resumen de la gestión en Jira (PDF)
+
+| Entregable | Estado | Enlace / notas |
+|------------|--------|----------------|
+| **Resumen Jira (PDF)** | **Pendiente en este repo** | Proyecto gestionado en https://maptuu.atlassian.net (Jira). Falta exportar estadísticas del tablero y añadir `docs/pdf/jira-resumen.pdf` |
+
+---
+
+## 9. Documentación de código (Compodoc)
+
+| | |
+|---|---|
+| **Generación** | En `vercelAngularMappTuu`: `npm run docs` / `npm run docs:build` |
+| **Publicación en producción** | https://vercel-angular-mapp-tuu.vercel.app/documentation/ |
+| **Configuración Vercel** | `vercel.json` ejecuta `docs:build` en el build; salida en `dist/map-tuu/browser/documentation` |
+
+Compodoc documenta componentes, servicios, guards y pipes del frontend Angular a partir de JSDoc en el código.
+
+**Nota:** la API Node no usa Compodoc; su referencia es **Swagger** en la URL de producción indicada arriba.
+
+---
+
+## 10. Documentación técnica (Confluence) — complemento
 
 Espacio del proyecto: **https://maptuu.atlassian.net/wiki/spaces/MAP**
 
@@ -188,30 +220,7 @@ Espacio del proyecto: **https://maptuu.atlassian.net/wiki/spaces/MAP**
 
 ---
 
-## 8. Documentación unificada (PDF) y Jira
-
-| Entregable | Estado | Enlace / notas |
-|------------|--------|----------------|
-| **PDF unificado (Confluence)** | **Pendiente en este repo** | Exportar manualmente el espacio MAP desde Confluence (PDF) y subirlo a `docs/pdf/` — ver [docs/PENDIENTES.md](docs/PENDIENTES.md) |
-| **Resumen Jira (PDF)** | **Pendiente en este repo** | Proyecto gestionado en https://maptuu.atlassian.net (Jira). No hay PDF versionado aquí; el equipo debe exportar estadísticas del tablero y añadir `docs/pdf/jira-resumen.pdf` |
-
----
-
-## 9. Documentación de código (Compodoc)
-
-| | |
-|---|---|
-| **Generación** | En `vercelAngularMappTuu`: `npm run docs` / `npm run docs:build` |
-| **Publicación en producción** | https://vercel-angular-mapp-tuu.vercel.app/documentation/ |
-| **Configuración Vercel** | `vercel.json` ejecuta `docs:build` en el build; salida en `dist/map-tuu/browser/documentation` |
-
-Compodoc documenta componentes, servicios, guards y pipes del frontend Angular a partir de JSDoc en el código.
-
-**Nota:** la API Node no usa Compodoc; su referencia es **Swagger** en la URL de producción indicada arriba.
-
----
-
-## 10. Aportación por módulo
+## 11. Detalle ampliado por módulo
 
 Plantilla según el repositorio del centro. Donde no hay evidencia en el repositorio, se indica explícitamente.
 
@@ -338,7 +347,7 @@ Plantilla según el repositorio del centro. Donde no hay evidencia en el reposit
 
 ---
 
-## 11. Pendientes y limitaciones conocidas
+## 12. Pendientes y limitaciones conocidas
 
 Lista detallada: **[docs/PENDIENTES.md](docs/PENDIENTES.md)**
 
