@@ -60,24 +60,9 @@ Guía orientada a usuarios no técnicos en Confluence: [MapTuu — Guía de la a
 
 ### Diagrama de arquitectura (alto nivel)
 
-```mermaid
-flowchart TB
-  subgraph clientes
-    WEB[vercelAngularMappTuu<br/>Angular 19 + Leaflet]
-    AND[androidMappTuu<br/>Kotlin + Compose]
-  end
-  API[vercelNodeMappTuu<br/>Express 5 + TypeScript]
-  FS[(Cloud Firestore)]
-  PY[PythonMappTuu<br/>export CSV]
-  PBI[Microsoft Power BI]
+![Diagrama de arquitectura MapTuu](docs/img/00-diagrama-arquitectura.png)
 
-  WEB -->|lecturas onSnapshot| FS
-  WEB -->|escrituras Bearer JWT| API
-  AND -->|Retrofit Bearer| API
-  API -->|Firebase Admin| FS
-  PY -->|cuenta de servicio| FS
-  PY --> PBI
-```
+> Pendiente de añadir/actualizar `docs/img/00-diagrama-arquitectura.png` con la versión final del diagrama.
 
 Patrón de datos (web + API): **lecturas** en cliente con Firestore; **escrituras y reglas de dominio** vía HTTP a la API con token Firebase.
 
@@ -87,23 +72,27 @@ Las **capturas de pantalla** del producto (requisito de la guía del centro) est
 
 ## 3. Capturas e imágenes del producto
 
-Capturas de la aplicación (guía del centro: imágenes en el repo, enlazadas desde la explicación del producto). Estado actual:
+Capturas de la aplicación (guía del centro: imágenes embebidas directamente en el repo).
 
-| Imagen sugerida | Estado |
-|-----------------|--------|
-| Landing / listado actividades | **Pendiente** — añadir en `docs/img/` |
-| Mapa (web) | **Pendiente** |
-| Detalle actividad + mapa | **Pendiente** |
-| Panel admin / reportes | **Pendiente** |
-| App Android | **Pendiente** |
+### Landing / listado actividades
 
-Cuando subáis los PNG, enlazadlos aquí (ejemplo):
+![Landing / listado actividades](docs/img/01-landing.png)
 
-```markdown
-![Landing](docs/img/01-landing.png)
-![Listado de actividades](docs/img/02-listado-actividades.png)
-![Mapa web](docs/img/03-mapa-web.png)
-```
+### Mapa (web)
+
+![Mapa web](docs/img/02-mapa-web.png)
+
+### Detalle de actividad + mapa
+
+![Detalle actividad y mapa](docs/img/03-detalle-actividad-mapa.png)
+
+### Panel admin / reportes
+
+![Panel admin y reportes](docs/img/04-panel-admin-reportes.png)
+
+### App Android
+
+![App Android](docs/img/05-app-android.png)
 
 Instrucciones: [docs/img/README.md](docs/img/README.md).
 
