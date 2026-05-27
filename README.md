@@ -19,8 +19,7 @@
 8. [Resumen de la gestión en Jira (PDF)](#8-resumen-de-la-gestión-en-jira-pdf)
 9. [Documentación de código (Compodoc)](#9-documentación-de-código-compodoc)
 10. [Documentación técnica (Confluence) — complemento](#10-documentación-técnica-confluence--complemento)
-11. [Detalle ampliado por módulo](#11-detalle-ampliado-por-módulo)
-12. [Pendientes y limitaciones conocidas](#12-pendientes-y-limitaciones-conocidas)
+11. [Pendientes y limitaciones conocidas](#11-pendientes-y-limitaciones-conocidas)
 
 ---
 
@@ -101,19 +100,102 @@ Instrucciones: [docs/img/README.md](docs/img/README.md).
 
 ## 4. Qué aporta el proyecto en cada módulo
 
-Resumen de aportación por módulo para evaluación. El desarrollo detallado con evidencias está en la [sección 11](#11-detalle-ampliado-por-módulo).
+Estructura siguiendo la plantilla del repositorio del centro: objetivos del modulo cubiertos, evidencias y limitaciones.
 
-| Módulo (profesorado) | Aportación en MapTuu |
-|---|---|
-| Acceso a datos — Juan Antonio García Gómez | Firestore, autenticación Firebase y exportación de datos |
-| Programación multimedia y dispositivos móviles — David Hormigo Ramírez | App Android (visor) con Compose, Room, Retrofit y mapas |
-| Programación de servicios y procesos — David Hormigo Ramírez | API REST, scripts de proceso y flujo de exportación Python |
-| Desarrollo de interfaces — Carmen Campos Fernández | SPA Angular responsive, i18n, mapas, flujo de usuario |
-| Servidores y APIs — Juan Antonio García Gómez | Despliegue Vercel, Swagger, seguridad y CORS |
-| Empresa e iniciativa emprendedora II — Rosa Carmen Alcázar Rosal | Propuesta de valor, páginas informativas y enfoque de producto |
-| Sistemas de gestión empresarial — Miguel Ángel Ronda Carracao | Exportación CSV para análisis e integración con Power BI |
+### Acceso a datos — Juan Antonio García Gómez
 
-Para revisión de arquitectura por capas/repositorios: [Anexo de Confluence](#10-documentación-técnica-confluence--complemento).
+**Objetivos cubiertos:** Firestore, autenticación Firebase y estructura del proyecto en Angular.
+
+**Evidencias:**
+- Modelo y colecciones en Firestore: [Confluence — Backend BBDD](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/3112962)
+- Lecturas con `onSnapshot`: servicios en `vercelAngularMappTuu` (`activity.service.ts`, `plan.service.ts`)
+- Flujo de sesión Firebase Auth integrado entre frontend y backend
+- Organización del frontend por capas (`features`, `common`, `core`) documentada en Confluence
+
+**Limitaciones:** coexisten algunos campos legacy en datos históricos (`IdTypeActivity` vs `activityTypeId`).
+
+---
+
+### Programación multimedia y dispositivos móviles — David Hormigo Ramírez
+
+**Objetivos cubiertos:** desarrollo de la APK Android y funcionalidades móviles.
+
+**Evidencias:**
+- Repositorio Android: https://github.com/Jose-AntonioT8/androidMappTuu
+- APK de referencia: [MappTuu.apk](https://github.com/Jose-AntonioT8/androidMappTuu/blob/main/MappTuu.apk)
+- Stack móvil: Kotlin, Jetpack Compose, Room, Retrofit, Hilt, Firebase Auth, Google Maps
+- Pantallas de app: listado/detalle, mapa, perfil y autenticación
+
+**Limitaciones:** el alcance móvil está centrado en modo visor; los flujos avanzados de gestión siguen en web.
+
+---
+
+### Programación de servicios y procesos — David Hormigo Ramírez
+
+**Objetivos cubiertos:** se trabaja el mismo bloque funcional que en móvil, aplicado al ciclo completo de la app Android y sus integraciones.
+
+**Evidencias:**
+- Integración de cliente móvil con API REST mediante Bearer token
+- Estructura por capas en Android (`ui`, `data`, `di`) y sincronización con backend
+- Gestión de build y empaquetado APK para pruebas de proyecto
+- Documentación técnica Android en Confluence: [09 - Android MappTuu](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/27197450)
+
+**Limitaciones:** no se plantea microservicio independiente para móvil; se reutiliza la API principal.
+
+---
+
+### Desarrollo de interfaces — Carmen Campos Fernández
+
+**Objetivos cubiertos:** estilos, responsividad, contraste visual y apoyo a visualización analítica.
+
+**Evidencias:**
+- Frontend Angular + Tailwind: https://github.com/Jose-AntonioT8/vercelAngularMappTuu
+- Ajustes de interfaz responsive en vistas principales (landing, login, sign-up, detalle)
+- Uso de contraste de color y componentes visuales para mejorar legibilidad
+- Integración de datos exportados para consumo en Power BI (soporte desde interfaz/documentacion)
+
+**Limitaciones:** no hay auditoría formal WCAG versionada en el repo.
+
+---
+
+### Servidores y APIs — Juan Antonio García Gómez
+
+**Objetivos cubiertos:** despliegue en Vercel, Swagger, seguridad y CORS.
+
+**Evidencias:**
+- API desplegada: https://vercel-node-mapp-tuu.vercel.app/api
+- Swagger UI: https://vercel-node-mapp-tuu.vercel.app/api-docs/
+- Configuración de cabeceras y CORS hacia frontend de producción
+- Frontend desplegado en Vercel con pipeline de build y documentación
+
+**Limitaciones:** algunos endpoints mantienen tareas de endurecimiento recogidas en riesgos técnicos.
+
+---
+
+### Empresa e iniciativa emprendedora II — Rosa Carmen Alcázar Rosal
+
+**Objetivos cubiertos:** propuesta de valor, páginas informativas y enfoque de producto.
+
+**Evidencias:**
+- Definición de propuesta y público objetivo en Confluence: [MapTuu — Guía de la aplicación](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/24248485)
+- Páginas informativas `about` y `contact` en la web
+- Narrativa de producto en landing y documentación de exposición
+
+**Limitaciones:** faltan entregables de plan de negocio/finanzas en PDF dentro del repo.
+
+---
+
+### Sistemas de gestión empresarial — Miguel Ángel Ronda Carracao
+
+**Objetivos cubiertos:** exportación CSV para análisis e integración con Power BI usando pandas con Python.
+
+**Evidencias:**
+- Repositorio de exportación: https://github.com/Jose-AntonioT8/PythonMappTuu
+- Script `export_firestore_to_powerbi.py` con uso de pandas
+- Generación de CSV relacionales para Power BI (`users`, `activities`, `plans`, `reviews`, enlaces)
+- Documentación funcional en Confluence: [10 - Python MappTuu](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/27426817)
+
+**Limitaciones:** faltan capturas de dashboards Power BI en `docs/img/`.
 
 ---
 
@@ -220,134 +302,7 @@ Espacio del proyecto: **https://maptuu.atlassian.net/wiki/spaces/MAP**
 
 ---
 
-## 11. Detalle ampliado por módulo
-
-Plantilla según el repositorio del centro. Donde no hay evidencia en el repositorio, se indica explícitamente.
-
-### Acceso a datos — Juan Antonio García Gómez
-
-**Objetivos cubiertos:** persistencia en **Cloud Firestore**, autenticación Firebase, exportación de datos para análisis.
-
-**Evidencias:**
-
-| Evidencia | Enlace |
-|-----------|--------|
-| Modelo Firestore (colecciones, campos, relaciones) | [Confluence — Backend BBDD](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/3112962) |
-| Lecturas `onSnapshot` en Angular | `src/app/core/services/activity.service.ts`, `plan.service.ts` (repo frontend) |
-| Escrituras vía API + Admin SDK | Repo `vercelNodeMappTuu` — módulos `activities`, `plans`, `users`, `activitytypes`, `reports` |
-| Export CSV Power BI | Repo `PythonMappTuu` — `export_firestore_to_powerbi.py` → `output/*.csv` |
-| Cuenta de servicio / env | `FIREBASE_SERVICE_ACCOUNT` o `FIREBASE_SERVICE_ACCOUNT_PATH` en Python y Node |
-
-**Limitaciones:** integridad referencial manual en borrados; campos legacy (`IdTypeActivity` vs `activityTypeId`) documentados en [07 - Riesgos](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/24117249).
-
----
-
-### Programación multimedia y dispositivos móviles — David Hormigo Ramírez
-
-**Objetivos cubiertos:** aplicación **Android** nativa (visor), sensores/permisos (cámara, notificaciones), mapas en móvil.
-
-**Evidencias:**
-
-| Evidencia | Enlace |
-|-----------|--------|
-| Repositorio Android (público) | https://github.com/Jose-AntonioT8/androidMappTuu |
-| Documentación Confluence | [09 - Android MappTuu](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/27197450) |
-| Stack | Kotlin, Jetpack Compose, Hilt, Room, Retrofit, Firebase Auth, Google Maps |
-| APK de referencia | [MappTuu.apk](https://github.com/Jose-AntonioT8/androidMappTuu/blob/main/MappTuu.apk) |
-| Pantallas | `ActivityList`, `PlanList`, `Map`, `Profile`, `Login` — ver README del repo Android |
-
-**Limitaciones:** app principalmente **visor**; creación/edición completa de contenido está centrada en la web.
-
----
-
-### Programación de servicios y procesos — David Hormigo Ramírez
-
-**Objetivos cubiertos:** API REST, procesos de moderación, scripts de mantenimiento, exportación batch (Python).
-
-**Evidencias:**
-
-| Evidencia | Enlace |
-|-----------|--------|
-| API Express 5 + TypeScript | https://github.com/Jose-AntonioT8/vercelNodeMappTuu |
-| Swagger producción | https://vercel-node-mapp-tuu.vercel.app/api-docs/ |
-| Scripts npm | `seed:firestore`, `migrate:activity-moderation`, `test`, `test:coverage` (ver `package.json` del backend) |
-| Export offline | `PythonMappTuu` — proceso ETL Firestore → CSV |
-
-**Limitaciones:** el README largo del repo Node incluye material formativo de una API genérica PostgreSQL/Prisma; el **código de producción MapTuu** usa **Firestore** como almacén principal de dominio (ver módulos en `src/modules/`).
-
----
-
-### Desarrollo de interfaces — Carmen Campos Fernández
-
-**Objetivos cubiertos:** SPA responsive, UX de listados/mapas/formularios, i18n, accesibilidad básica (cabeceras, feedback).
-
-**Evidencias:**
-
-| Evidencia | Enlace |
-|-----------|--------|
-| Frontend Angular 19 + Tailwind | https://github.com/Jose-AntonioT8/vercelAngularMappTuu (rama `frontend`) |
-| Producción | https://vercel-angular-mapp-tuu.vercel.app/ |
-| i18n | `src/assets/i18n/` (es, en, de) |
-| Mapa detalle actividad (layout) | Merge PR #11 — componente `activity-detail` |
-| Rutas y flujos | [Frontend - 2. Rutas y Guards](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/2916353) |
-| Seguridad cliente (CSP, headers) | [Frontend - 3. Seguridad](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/2949122) |
-
-**Limitaciones:** no hay auditoría WCAG formal documentada en el repo.
-
----
-
-### Servidores y APIs — Juan Antonio García Gómez
-
-**Objetivos cubiertos:** despliegue en **Vercel**, API REST documentada, CORS, seguridad HTTP.
-
-**Evidencias:**
-
-| Evidencia | Enlace |
-|-----------|--------|
-| API en Vercel | https://vercel-node-mapp-tuu.vercel.app/api |
-| Swagger UI | https://vercel-node-mapp-tuu.vercel.app/api-docs/ |
-| Frontend Vercel | `vercel.json` en repo Angular; build `dist/map-tuu/browser` |
-| CORS hacia front de producción | Documentado en Confluence [08 - Repositorios](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/27000833) (mayo 2026) |
-| Módulos API | `auth`, `users`, `activities`, `activitytypes`, `plans`, `reports` |
-
-**Limitaciones:** algunos endpoints documentados en riesgos (p. ej. valoración de planes sin auth) — ver [07 - Riesgos](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/24117249).
-
----
-
-### Empresa e iniciativa emprendedora II — Rosa Carmen Alcázar Rosal
-
-**Objetivos cubiertos (desde el producto documentado):** propuesta de valor de una plataforma de ocio/turismo colaborativa; secciones **Acerca de** y **Contacto** en la web.
-
-**Evidencias:**
-
-| Evidencia | Enlace |
-|-----------|--------|
-| Descripción de producto y usuarios | [Guía Confluence](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/24248485) |
-| Rutas `about`, `contact` | `src/app/app.routes.ts` (lazy load) en repo Angular |
-| Landing pública | https://vercel-angular-mapp-tuu.vercel.app/ → `landingPage` |
-
-**Limitaciones:** **no hay** en este repositorio un plan de negocio, estudio de mercado ni análisis financiero en PDF. Si el módulo exige entregables específicos de EIE, deben añadirse por el equipo en `docs/modulos/eie/` (pendiente).
-
----
-
-### Sistemas de gestión empresarial — Miguel Ángel Ronda Carracao
-
-**Objetivos cubiertos:** exportación de datos de negocio para **informes y dashboards** (Power BI).
-
-**Evidencias:**
-
-| Evidencia | Enlace |
-|-----------|--------|
-| Script Python | https://github.com/Jose-AntonioT8/PythonMappTuu |
-| Tablas CSV | `users`, `activityTypes`, `activities`, `plans`, `activity_reviews`, `plan_reviews`, `plan_activity_links` |
-| Documentación | [10 - Python MappTuu](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/27426817) |
-| Relaciones Power BI | Por `id`, `activityId`, `planId`, `userId`, `activityTypeId` (README del repo Python) |
-
-**Limitaciones:** no hay capturas de informes Power BI versionadas en el repo; el equipo puede añadirlas en `docs/img/powerbi/` (pendiente).
-
----
-
-## 12. Pendientes y limitaciones conocidas
+## 11. Pendientes y limitaciones conocidas
 
 Lista detallada: **[docs/PENDIENTES.md](docs/PENDIENTES.md)**
 
