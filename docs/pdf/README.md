@@ -3,7 +3,7 @@
 | Archivo | Estado | Enlace |
 |---------|--------|--------|
 | `confluence-maptuu.pdf` | Completado | [confluence-maptuu.pdf](confluence-maptuu.pdf) |
-| `jira-resumen.pdf` | Completado | [jira-resumen.pdf](jira-resumen.pdf) |
-| `jira-resumen.md` | Completado (texto ampliado) | [jira-resumen.md](jira-resumen.md) |
+| `jira-resumen.pdf` | Completado (informe detallado, 86 incidencias) | [jira-resumen.pdf](jira-resumen.pdf) |
+| `jira-resumen.md` | Completado (misma información, editable) | [jira-resumen.md](jira-resumen.md) |
 
 **Cómo abrir los PDF:** en Finder o con Vista previa (macOS). En el IDE/Cursor no se visualizan bien porque son binarios. En GitHub: abrir el enlace del archivo y pulsar **Download** o **View raw**.

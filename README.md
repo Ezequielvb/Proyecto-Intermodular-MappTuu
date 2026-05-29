@@ -284,7 +284,7 @@ pip install -r requirements.txt && python export_firestore_to_powerbi.py
 
 | Entregable | Estado | Enlace / notas |
 |------------|--------|----------------|
-| **Resumen Jira (PDF)** | Completado | [docs/pdf/jira-resumen.pdf](docs/pdf/jira-resumen.pdf) · versión ampliada en [docs/pdf/jira-resumen.md](docs/pdf/jira-resumen.md) |
+| **Resumen Jira (PDF)** | Completado | [docs/pdf/jira-resumen.pdf](docs/pdf/jira-resumen.pdf) (informe completo, ~8 páginas) · fuente editable: [docs/pdf/jira-resumen.md](docs/pdf/jira-resumen.md) |
 
 ---
 

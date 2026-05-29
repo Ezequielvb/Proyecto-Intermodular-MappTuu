@@ -1,0 +1,1639 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+body{font-family:Helvetica,Arial,sans-serif;margin:40px;font-size:11px;line-height:1.4}
+h1{font-size:22px} h2{font-size:16px;margin-top:24px} h3{font-size:13px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:10px}
+th,td{border:1px solid #ccc;padding:6px;text-align:left}
+th{background:#f0f4f8} blockquote{background:#fff8e6;border-left:4px solid #f59e0b;padding:8px 12px}
+tr:nth-child(even){background:#fafafa}
+</style></head><body><h1>Informe completo de gestión en Jira — MapTuu (MAP)</h1>
+<table>
+<thead>
+<tr>
+<th>Metadato</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instancia</td>
+<td>https://maptuu.atlassian.net</td>
+</tr>
+<tr>
+<td>Proyecto</td>
+<td>MAP (MappTuu)</td>
+</tr>
+<tr>
+<td>Fecha del informe</td>
+<td>29 de mayo de 2026</td>
+</tr>
+<tr>
+<td>Incidencias analizadas</td>
+<td>86</td>
+</tr>
+<tr>
+<td>Fuente</td>
+<td>JQL + Atlassian Rovo (MCP)</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>Ezequiel Vargas Berrocal · José Antonio Domínguez González</td>
+</tr>
+<tr>
+<td>Exposición DAM</td>
+<td>5 junio 2026 · 10:30–10:45 · Orden 7</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1. Resumen ejecutivo</h2>
+<p>El proyecto <strong>MAP</strong> acumula <strong>86</strong> incidencias en Jira, con un <strong>90.7%</strong> en estado finalizado (78 cerradas). 
+El sprint de exposición etiquetado <strong><code>sprint-8</code></strong> comprende <strong>13</strong> tareas, todas en estado <strong>Finalizada</strong>. 
+La carga está repartida entre <strong>Ezequiel Vargas</strong> (43 incidencias) y <strong>José Antonio Domínguez González</strong> (40 incidencias). 
+El proyecto <strong>no utiliza Story Points</strong> en los campos consultados. Las incidencias abiertas restantes son principalmente <strong>épicas de roadmap</strong> (contenedores), no bloqueos operativos del sprint de exposición.</p>
+<blockquote>
+<p><strong>Alerta:</strong> Verificar alineación entre tareas Jira marcadas como finalizadas y evidencias en el repositorio guía (capturas, PR tabla CPIFP, diagrama).</p>
+</blockquote>
+<hr />
+<h2>2. Estado general del proyecto</h2>
+<h3>2.1 Distribución por estado</h3>
+<table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>Cantidad</th>
+<th>Porcentaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Finalizada</td>
+<td>78</td>
+<td>90.7%</td>
+</tr>
+<tr>
+<td>Tareas por hacer</td>
+<td>7</td>
+<td>8.1%</td>
+</tr>
+<tr>
+<td>En curso</td>
+<td>1</td>
+<td>1.2%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>86</strong></td>
+<td><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>2.2 Distribución por tipo de incidencia</h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Cantidad</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tarea</td>
+<td>52</td>
+<td>60.5%</td>
+</tr>
+<tr>
+<td>Subtarea</td>
+<td>21</td>
+<td>24.4%</td>
+</tr>
+<tr>
+<td>Epic</td>
+<td>11</td>
+<td>12.8%</td>
+</tr>
+<tr>
+<td>Historia</td>
+<td>1</td>
+<td>1.2%</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>1</td>
+<td>1.2%</td>
+</tr>
+</tbody>
+</table>
+<h3>2.3 Etiquetas más frecuentes</h3>
+<table>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Incidencias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sprint-8</code></td>
+<td>13</td>
+</tr>
+<tr>
+<td><code>exposicion</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>roadmap-mayo-2026</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>ia</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>frontend</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>presentacion</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>seguridad</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>backend</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>proceso</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>i18n</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>calidad</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>reportes</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>devops</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>docs</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>qa</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>epic-calidad</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>actividades</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>moderación</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>planificacion</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>exposicion-2dam</code></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. Carga de trabajo por miembro</h2>
+<table>
+<thead>
+<tr>
+<th>Miembro</th>
+<th>Total asignadas</th>
+<th>Finalizadas</th>
+<th>Abiertas</th>
+<th>% completado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ezequiel Vargas</td>
+<td>43</td>
+<td>39</td>
+<td>4</td>
+<td>90.7%</td>
+</tr>
+<tr>
+<td>José Antonio Domínguez González</td>
+<td>40</td>
+<td>36</td>
+<td>4</td>
+<td>90.0%</td>
+</tr>
+<tr>
+<td>Sin asignar</td>
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>100.0%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. Métricas de esfuerzo (Story Points)</h2>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Story Points totales</td>
+<td>0 (campo no configurado)</td>
+</tr>
+<tr>
+<td>Story Points completados</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Promedio por incidencia</td>
+<td>N/D</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>El tablero MAP no registra estimación en Story Points. Las métricas de avance deben basarse en conteo de incidencias y estados.</p>
+</blockquote>
+<hr />
+<h2>5. Sprint 8 — Exposición intermodular (<code>sprint-8</code>)</h2>
+<h3>5.1 Resumen del sprint</h3>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total tareas sprint-8</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Finalizadas</td>
+<td>13 (100%)</td>
+</tr>
+</tbody>
+</table>
+<h3>5.2 Reparto por persona (sprint-8)</h3>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Tareas</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>José Antonio Domínguez González</td>
+<td>8</td>
+<td>61.5%</td>
+</tr>
+<tr>
+<td>Ezequiel Vargas</td>
+<td>5</td>
+<td>38.5%</td>
+</tr>
+</tbody>
+</table>
+<h3>5.3 Detalle de cada incidencia sprint-8</h3>
+<table>
+<thead>
+<tr>
+<th>Clave</th>
+<th>Estado</th>
+<th>Asignado</th>
+<th>Prioridad</th>
+<th>Creada</th>
+<th>Actualizada</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAP-85</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>2026-05-26</td>
+<td>2026-05-26</td>
+<td>Exposición / Crear repositorio guía Proyecto-Intermodular-MappTuu</td>
+</tr>
+<tr>
+<td>MAP-86</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>2026-05-26</td>
+<td>2026-05-26</td>
+<td>Exposición / Completar README repo guía (módulos DAM, repos, producció</td>
+</tr>
+<tr>
+<td>MAP-87</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>2026-05-26</td>
+<td>2026-05-26</td>
+<td>Exposición / Actualizar Confluence (repos, arquitectura, exposición)</td>
+</tr>
+<tr>
+<td>MAP-88</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>2026-05-26</td>
+<td>2026-05-26</td>
+<td>Exposición / Verificar despliegues producción (web, API, APK) para tri</td>
+</tr>
+<tr>
+<td>MAP-89</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>2026-05-26</td>
+<td>2026-05-26</td>
+<td>Exposición / Últimos retoques README repo guía y checklist pendientes</td>
+</tr>
+<tr>
+<td>MAP-90</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>2026-05-26</td>
+<td>2026-05-26</td>
+<td>Exposición / Capturas docs/img y referencias en README</td>
+</tr>
+<tr>
+<td>MAP-91</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>2026-05-26</td>
+<td>2026-05-26</td>
+<td>Exposición / PR URL repo en tabla exposiciones CPIFPAlanTuring</td>
+</tr>
+<tr>
+<td>MAP-92</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>2026-05-26</td>
+<td>2026-05-26</td>
+<td>Exposición / Exportar PDF Confluence y Jira a docs/pdf/</td>
+</tr>
+<tr>
+<td>MAP-93</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>2026-05-26</td>
+<td>2026-05-26</td>
+<td>Exposición / Guion y estructura presentación oral (15 min, orden 7)</td>
+</tr>
+<tr>
+<td>MAP-94</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>2026-05-26</td>
+<td>2026-05-26</td>
+<td>Exposición / Slides, demo y ensayo presentación (web, API, Android)</td>
+</tr>
+<tr>
+<td>MAP-95</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>2026-05-27</td>
+<td>2026-05-27</td>
+<td>Preparar intervención de José para exposición (bloques + tiempos)</td>
+</tr>
+<tr>
+<td>MAP-96</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>2026-05-27</td>
+<td>2026-05-27</td>
+<td>Preparar demo técnica en vivo (API + Android + web) para exposición</td>
+</tr>
+<tr>
+<td>MAP-98</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>2026-05-27</td>
+<td>2026-05-27</td>
+<td>Exportar PDF de Confluence y PDF resumen Jira para anexos</td>
+</tr>
+</tbody>
+</table>
+<h3>5.4 Descripciones y alcance (sprint-8)</h3>
+<h4>MAP-85</h4>
+<ul>
+<li><strong>Resumen:</strong> Exposición | Crear repositorio guía Proyecto-Intermodular-MappTuu</li>
+<li><strong>Asignado:</strong> Ezequiel Vargas</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p><strong>Sprint 8</strong> · Semana 12–18 may 2026</p>
+<p><strong>Objetivo:</strong> Crear y publicar el repo de documentación de exposición según guía CPIFP Alan Turing.</p>
+<p><strong>Alcance:</strong></p>
+<ul>
+<li>Repo <code>Ezequielvb/Proyecto-Intermodular-MappTuu</code></li>
+<li>README con índice, equipo, enlaces a 4 repos</li>
+<li>Carpetas <code>docs/</code>, <code>docs/img/</code>, <code>docs/pdf/</code></li>
+</ul>
+<p><strong>Entregable:</strong> Repo accesible con README principal completo.</p>
+<p><strong>Etiquetas:</strong> exposicion, sprint-8</p>
+<h4>MAP-86</h4>
+<ul>
+<li><strong>Resumen:</strong> Exposición | Completar README repo guía (módulos DAM, repos, producción)</li>
+<li><strong>Asignado:</strong> José Antonio Domínguez González</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p><strong>Sprint 8</strong> · Semana 12–18 may 2026</p>
+<p><strong>Objetivo:</strong> README del repo guía alineado con <code>exposiciones_proyecto_intermodular_25_26_2DAM_M</code>.</p>
+<p><strong>Alcance:</strong></p>
+<ul>
+<li>Aportación por los 7 módulos con evidencias y limitaciones</li>
+<li>URLs producción, Compodoc, Swagger, APK</li>
+<li>Sección pendientes honesta</li>
+</ul>
+<p><strong>Entregable:</strong> README revisado en <code>main</code>.</p>
+<p><strong>Etiquetas:</strong> exposicion, sprint-8</p>
+<h4>MAP-87</h4>
+<ul>
+<li><strong>Resumen:</strong> Exposición | Actualizar Confluence (repos, arquitectura, exposición)</li>
+<li><strong>Asignado:</strong> Ezequiel Vargas</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p><strong>Sprint 8</strong> · Semana 12–18 may 2026</p>
+<p><strong>Objetivo:</strong> Confluence MAP actualizado para exposición y PDF futuro.</p>
+<p><strong>Alcance:</strong></p>
+<ul>
+<li>Páginas 08-repositorios, 01-arquitectura, home</li>
+<li>Android 09, Python 10</li>
+<li>Estado PR #11 y ecosistema 4 repos</li>
+</ul>
+<p><strong>Entregable:</strong> Espacio MAP coherente con repo guía.</p>
+<p><strong>Etiquetas:</strong> exposicion, sprint-8</p>
+<h4>MAP-88</h4>
+<ul>
+<li><strong>Resumen:</strong> Exposición | Verificar despliegues producción (web, API, APK) para tribunal</li>
+<li><strong>Asignado:</strong> José Antonio Domínguez González</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p><strong>Sprint 8</strong> · Semana 12–18 may 2026</p>
+<p><strong>Objetivo:</strong> Confirmar que enlaces de evaluación funcionan.</p>
+<p><strong>Alcance:</strong></p>
+<ul>
+<li>https://vercel-angular-mapp-tuu.vercel.app/</li>
+<li>https://vercel-node-mapp-tuu.vercel.app/api y /api-docs/</li>
+<li>APK en androidMappTuu</li>
+<li>Compodoc <code>/documentation/</code></li>
+</ul>
+<p><strong>Entregable:</strong> Checklist OK en README o comentario en esta tarea.</p>
+<p><strong>Etiquetas:</strong> exposicion, sprint-8</p>
+<h4>MAP-89</h4>
+<ul>
+<li><strong>Resumen:</strong> Exposición | Últimos retoques README repo guía y checklist pendientes</li>
+<li><strong>Asignado:</strong> Ezequiel Vargas</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p><strong>Sprint 8</strong> · Semana 19–25 may 2026</p>
+<p><strong>Objetivo:</strong> Cerrar huecos de la guía del centro antes del 5-jun.</p>
+<p><strong>Alcance:</strong></p>
+<ul>
+<li>Revisar <code>docs/PENDIENTES.md</code></li>
+<li>Enlaces rotos, fechas exposición, coherencia módulos</li>
+<li>Marcar tareas Jira relacionadas</li>
+</ul>
+<p><strong>Entregable:</strong> README y checklist al día.</p>
+<p><strong>Etiquetas:</strong> exposicion, sprint-8</p>
+<h4>MAP-90</h4>
+<ul>
+<li><strong>Resumen:</strong> Exposición | Capturas docs/img y referencias en README</li>
+<li><strong>Asignado:</strong> Ezequiel Vargas</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p><strong>Sprint 8</strong> · Semana 19–25 may 2026</p>
+<p><strong>Objetivo:</strong> Cumplir guía del centro: imágenes en el repo guía.</p>
+<p><strong>Alcance:</strong></p>
+<ul>
+<li>Capturas web (landing, listado, mapa, detalle, IA, admin)</li>
+<li>Opcional Android / Power BI</li>
+<li>Embeber en README con rutas relativas</li>
+</ul>
+<p><strong>Entregable:</strong> PNG en <code>docs/img/</code> referenciados en README.</p>
+<p><strong>Etiquetas:</strong> exposicion, sprint-8</p>
+<h4>MAP-91</h4>
+<ul>
+<li><strong>Resumen:</strong> Exposición | PR URL repo en tabla exposiciones CPIFPAlanTuring</li>
+<li><strong>Asignado:</strong> José Antonio Domínguez González</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p><strong>Sprint 8</strong> · Semana 19–25 may 2026</p>
+<p><strong>Objetivo:</strong> Completar fila orden 7 en repo del centro.</p>
+<p><strong>Alcance:</strong></p>
+<ul>
+<li>PR a <code>exposiciones_proyecto_intermodular_25_26_2DAM_M</code></li>
+<li>URL: https://github.com/Ezequielvb/Proyecto-Intermodular-MappTuu</li>
+</ul>
+<p><strong>Entregable:</strong> PR mergeado o aprobado por profesorado.</p>
+<p><strong>Etiquetas:</strong> exposicion, sprint-8</p>
+<h4>MAP-92</h4>
+<ul>
+<li><strong>Resumen:</strong> Exposición | Exportar PDF Confluence y Jira a docs/pdf/</li>
+<li><strong>Asignado:</strong> José Antonio Domínguez González</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p><strong>Sprint 8</strong> · Semana 19–25 may 2026</p>
+<p><strong>Objetivo:</strong> PDFs obligatorios para evaluación DAM.</p>
+<p><strong>Alcance:</strong></p>
+<ul>
+<li><code>docs/pdf/confluence-maptuu.pdf</code> (espacio MAP)</li>
+<li><code>docs/pdf/jira-resumen.pdf</code> (estadísticas tablero, reparto tareas)</li>
+</ul>
+<p><strong>Entregable:</strong> Ambos PDF en repo guía + enlace en README.</p>
+<p><strong>Etiquetas:</strong> exposicion, sprint-8</p>
+<h4>MAP-93</h4>
+<ul>
+<li><strong>Resumen:</strong> Exposición | Guion y estructura presentación oral (15 min, orden 7)</li>
+<li><strong>Asignado:</strong> Ezequiel Vargas</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p><strong>Sprint 8</strong> · Semana 19–25 may 2026</p>
+<p><strong>Objetivo:</strong> Presentación 5 jun 2026, franja 10:30–10:45.</p>
+<p><strong>Alcance:</strong></p>
+<ul>
+<li>Estructura: contexto → problema → solución → demo → aprendizajes</li>
+<li>Reparto de intervención Ezequiel / José Antonio</li>
+<li>Timing ≤ 15 min</li>
+</ul>
+<p><strong>Entregable:</strong> Guion en Confluence o <code>docs/</code> del repo guía.</p>
+<p><strong>Etiquetas:</strong> exposicion, sprint-8</p>
+<h4>MAP-94</h4>
+<ul>
+<li><strong>Resumen:</strong> Exposición | Slides, demo y ensayo presentación (web, API, Android)</li>
+<li><strong>Asignado:</strong> José Antonio Domínguez González</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p><strong>Sprint 8</strong> · Semana 19–25 may 2026</p>
+<p><strong>Objetivo:</strong> Demo técnica estable para el tribunal.</p>
+<p><strong>Alcance:</strong></p>
+<ul>
+<li>Slides (PowerPoint / Canva / etc.)</li>
+<li>Recorrido demo: web + API/Swagger + APK Android</li>
+<li>Ensayo conjunto con cronómetro</li>
+<li>Usuario de prueba si aplica (sin publicar secretos en repo)</li>
+</ul>
+<p><strong>Entregable:</strong> Slides listas + ensayo registrado (comentario Jira o acta breve).</p>
+<p><strong>Participación:</strong> ambos en ensayo; responsable de cierre: José Antonio.</p>
+<p><strong>Etiquetas:</strong> exposicion, sprint-8</p>
+<h4>MAP-95</h4>
+<ul>
+<li><strong>Resumen:</strong> Preparar intervención de José para exposición (bloques + tiempos)</li>
+<li><strong>Asignado:</strong> José Antonio Domínguez González</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> planificacion, presentacion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p>Objetivo: equilibrar carga en la exposición con un bloque propio claro.</p>
+<p>Checklist:</p>
+<ul>
+<li>Definir qué apartados presenta José (Android, servicios/procesos, APIs/despliegue).</li>
+<li>Preparar guion de intervención con tiempos por bloque (total 15 min equipo).</li>
+<li>Hacer al menos 1 ensayo conjunto y ajustar transiciones entre ponentes.</li>
+<li>Registrar versión final del reparto para usar el día de exposición.</li>
+</ul>
+<p>Criterio de aceptación:</p>
+<ul>
+<li>Existe guion final con tiempos y orden de intervención.</li>
+<li>Ensayo realizado y sin solapes entre explicaciones.</li>
+</ul>
+<h4>MAP-96</h4>
+<ul>
+<li><strong>Resumen:</strong> Preparar demo técnica en vivo (API + Android + web) para exposición</li>
+<li><strong>Asignado:</strong> José Antonio Domínguez González</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> exposicion-2dam, presentacion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p>Objetivo: dejar una secuencia de demo de 6-8 minutos estable para el tribunal.</p>
+<p>Checklist:</p>
+<ul>
+<li>Verificar flujo completo: landing -&gt; login -&gt; navegación principal -&gt; ejemplo Android/APK.</li>
+<li>Confirmar que API y Swagger responden correctamente durante la demo.</li>
+<li>Definir plan B si falla red/servicio (capturas o video corto de respaldo).</li>
+<li>Entregar guion de demo en markdown para compartir en el equipo.</li>
+</ul>
+<p>Criterio de aceptación:</p>
+<ul>
+<li>Existe guion de demo y validación previa documentada.</li>
+<li>Se ejecuta una pasada de prueba sin bloqueos críticos.</li>
+</ul>
+<h4>MAP-98</h4>
+<ul>
+<li><strong>Resumen:</strong> Exportar PDF de Confluence y PDF resumen Jira para anexos</li>
+<li><strong>Asignado:</strong> José Antonio Domínguez González</li>
+<li><strong>Estado:</strong> Finalizada</li>
+<li><strong>Etiquetas:</strong> confluence, jira, presentacion, sprint-8</li>
+</ul>
+<p><strong>Descripción:</strong></p>
+<p>Objetivo: completar los entregables documentales solicitados por el centro.</p>
+<p>Checklist:</p>
+<ul>
+<li>Exportar PDF unificado de Confluence (espacio MAP o páginas requeridas).</li>
+<li>Exportar PDF resumen de Jira con métricas (tareas por persona, epics, tablero, burndown si aplica).</li>
+<li>Subir ambos archivos al repositorio de documentación en docs/pdf.</li>
+<li>Confirmar referencias en README.</li>
+</ul>
+<p>Criterio de aceptación:</p>
+<ul>
+<li>Existen docs/pdf/confluence-maptuu.pdf y docs/pdf/jira-resumen.pdf.</li>
+<li>README enlaza correctamente ambos entregables.</li>
+</ul>
+<hr />
+<h2>6. Incidencias abiertas (detalle)</h2>
+<p>Total abiertas: <strong>8</strong></p>
+<table>
+<thead>
+<tr>
+<th>Clave</th>
+<th>Tipo</th>
+<th>Estado</th>
+<th>Asignado</th>
+<th>Días sin cerrar*</th>
+<th>Prioridad</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAP-2</td>
+<td>Epic</td>
+<td>En curso</td>
+<td>José Antonio Domínguez González</td>
+<td>0</td>
+<td>Medium</td>
+<td>EPIC - Planes personalizados con actividades</td>
+</tr>
+<tr>
+<td>MAP-4</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>Ezequiel Vargas</td>
+<td>0</td>
+<td>Medium</td>
+<td>EPIC - Moderación de contenido y reportes</td>
+</tr>
+<tr>
+<td>MAP-8</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>Ezequiel Vargas</td>
+<td>0</td>
+<td>Medium</td>
+<td>EPIC -  Funciones sociales</td>
+</tr>
+<tr>
+<td>MAP-54</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>José Antonio Domínguez González</td>
+<td>0</td>
+<td>Medium</td>
+<td>EPIC - Gestión de Identidad y Onboarding</td>
+</tr>
+<tr>
+<td>MAP-55</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>Ezequiel Vargas</td>
+<td>0</td>
+<td>Medium</td>
+<td>EPIC - Core de Mapas y Geolocalización</td>
+</tr>
+<tr>
+<td>MAP-56</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>Ezequiel Vargas</td>
+<td>0</td>
+<td>Medium</td>
+<td>EPIC - Descubrimiento y Gestión de Puntos de Interés (P</td>
+</tr>
+<tr>
+<td>MAP-57</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>José Antonio Domínguez González</td>
+<td>0</td>
+<td>Medium</td>
+<td>EPIC - Perfil de Usuario y Configuración</td>
+</tr>
+<tr>
+<td>MAP-75</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>José Antonio Domínguez González</td>
+<td>0</td>
+<td>Medium</td>
+<td>EPIC — Hardening IA, seguridad y calidad (roadmap hasta</td>
+</tr>
+</tbody>
+</table>
+<p>*Días calculados desde última actualización respecto al 29/05/2026.</p>
+<hr />
+<h2>7. Catálogo completo de incidencias (MAP)</h2>
+<table>
+<thead>
+<tr>
+<th>Clave</th>
+<th>Tipo</th>
+<th>Estado</th>
+<th>Asignado</th>
+<th>Prioridad</th>
+<th>Etiquetas</th>
+<th>Resumen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAP-2</td>
+<td>Epic</td>
+<td>En curso</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>EPIC - Planes personalizados con actividades</td>
+</tr>
+<tr>
+<td>MAP-3</td>
+<td>Epic</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>EPIC - Subida y visualización de actividades en ma</td>
+</tr>
+<tr>
+<td>MAP-4</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>EPIC - Moderación de contenido y reportes</td>
+</tr>
+<tr>
+<td>MAP-5</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Subida de actividad geolocalizada</td>
+</tr>
+<tr>
+<td>MAP-6</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Crear plan con actividades</td>
+</tr>
+<tr>
+<td>MAP-7</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Reportar actividad</td>
+</tr>
+<tr>
+<td>MAP-8</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>EPIC -  Funciones sociales</td>
+</tr>
+<tr>
+<td>MAP-9</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Creación de proyecto y login</td>
+</tr>
+<tr>
+<td>MAP-10</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Mapa interactivo con actividades</td>
+</tr>
+<tr>
+<td>MAP-11</td>
+<td>Epic</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>EPIC - Creación y registro de usuarios</td>
+</tr>
+<tr>
+<td>MAP-12</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Guardar planes (modo público/privado)</td>
+</tr>
+<tr>
+<td>MAP-13</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Revisión de reportes</td>
+</tr>
+<tr>
+<td>MAP-14</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Comentarios y likes en actividades</td>
+</tr>
+<tr>
+<td>MAP-15</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Implementar componente de formulario de registro (</td>
+</tr>
+<tr>
+<td>MAP-17</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Diseño e implementación de componentes comunes</td>
+</tr>
+<tr>
+<td>MAP-18</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Node server</td>
+</tr>
+<tr>
+<td>MAP-19</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>CRUD actividades</td>
+</tr>
+<tr>
+<td>MAP-20</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Implementar MapsService (Reverse Geocoding)</td>
+</tr>
+<tr>
+<td>MAP-21</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Implementar Lógica Reactive Forms (Validaciones)</td>
+</tr>
+<tr>
+<td>MAP-22</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Integrar Verificación de Ubicación</td>
+</tr>
+<tr>
+<td>MAP-23</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Implementar Guardado en ActivityService (Backend)</td>
+</tr>
+<tr>
+<td>MAP-24</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Maquetar HTML/CSS del Formulario de Creación</td>
+</tr>
+<tr>
+<td>MAP-25</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Crear Modelo y PlanService</td>
+</tr>
+<tr>
+<td>MAP-26</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Implementar Componente de Formulario</td>
+</tr>
+<tr>
+<td>MAP-27</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Integración del Formulario y Validaciones</td>
+</tr>
+<tr>
+<td>MAP-28</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Configurar Entorno y Librería de Mapas</td>
+</tr>
+<tr>
+<td>MAP-29</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Actualizar Modelo y Servicio de Actividades</td>
+</tr>
+<tr>
+<td>MAP-30</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Renderizar Marcadores (Markers)</td>
+</tr>
+<tr>
+<td>MAP-31</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Implementar InfoWindow (Detalles)</td>
+</tr>
+<tr>
+<td>MAP-32</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Creación de aplicación en Android</td>
+</tr>
+<tr>
+<td>MAP-33</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Configuración y Arquitectura</td>
+</tr>
+<tr>
+<td>MAP-34</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Interfaz de Usuario (UI)</td>
+</tr>
+<tr>
+<td>MAP-35</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Lógica y Datos</td>
+</tr>
+<tr>
+<td>MAP-36</td>
+<td>Epic</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>EPIC - Infraestructura y Arquitectura Base Android</td>
+</tr>
+<tr>
+<td>MAP-39</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Implementación de Subida de Imagen</td>
+</tr>
+<tr>
+<td>MAP-40</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>DB: Extensión del modelo de datos para visibilidad</td>
+</tr>
+<tr>
+<td>MAP-41</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>API: Actualizar lógica de persistencia (Create/Upd</td>
+</tr>
+<tr>
+<td>MAP-42</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>API: Implementar lógica de filtrado en el listado</td>
+</tr>
+<tr>
+<td>MAP-43</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>UI: Incorporar selector de privacidad en el formul</td>
+</tr>
+<tr>
+<td>MAP-44</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Security: Control de acceso a planes privados por</td>
+</tr>
+<tr>
+<td>MAP-45</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>QA: Pruebas cruzadas de visibilidad entre usuarios</td>
+</tr>
+<tr>
+<td>MAP-46</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>DB: Diseño del modelo de Reportes</td>
+</tr>
+<tr>
+<td>MAP-47</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>UI: Implementación del botón y modal de reporte</td>
+</tr>
+<tr>
+<td>MAP-48</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>API: Endpoint para creación de reportes</td>
+</tr>
+<tr>
+<td>MAP-49</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>QA: Pruebas de flujo de reporte</td>
+</tr>
+<tr>
+<td>MAP-50</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>API: Endpoint para listado de reportes (Admin)</td>
+</tr>
+<tr>
+<td>MAP-51</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>Security: Middleware de restricción de Rol</td>
+</tr>
+<tr>
+<td>MAP-52</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>UI: Dashboard de Moderación</td>
+</tr>
+<tr>
+<td>MAP-53</td>
+<td>Subtarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Lógica: Acciones de resolución (Borrado/Descarte)</td>
+</tr>
+<tr>
+<td>MAP-54</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>EPIC - Gestión de Identidad y Onboarding</td>
+</tr>
+<tr>
+<td>MAP-55</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>EPIC - Core de Mapas y Geolocalización</td>
+</tr>
+<tr>
+<td>MAP-56</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>EPIC - Descubrimiento y Gestión de Puntos de Inter</td>
+</tr>
+<tr>
+<td>MAP-57</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>EPIC - Perfil de Usuario y Configuración</td>
+</tr>
+<tr>
+<td>MAP-58</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Inicio de Sesión (Login) con Email</td>
+</tr>
+<tr>
+<td>MAP-59</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Registro de Nuevo Usuario (Sign Up)</td>
+</tr>
+<tr>
+<td>MAP-60</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Gestión de Sesión y Persistencia (Token)</td>
+</tr>
+<tr>
+<td>MAP-61</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Sin asignar</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Sincronización Inicial de Datos (BBDD Local v</td>
+</tr>
+<tr>
+<td>MAP-62</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Sin asignar</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Asistente de IA para Recomendación de Planes</td>
+</tr>
+<tr>
+<td>MAP-63</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Sin asignar</td>
+<td>Medium</td>
+<td>-</td>
+<td>US - Implementación Core de Mapa y Geolocalización</td>
+</tr>
+<tr>
+<td>MAP-64</td>
+<td>Historia</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>proceso, roadmap-mayo-2026</td>
+<td>Planificación: cierre de sprint actual y oleadas h</td>
+</tr>
+<tr>
+<td>MAP-65</td>
+<td>Error</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>ia, roadmap-mayo-2026, seguridad</td>
+<td>Seguridad: API key de IA y llamadas al LLM desde e</td>
+</tr>
+<tr>
+<td>MAP-66</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>frontend, i18n, ia, roadmap-mayo-2026</td>
+<td>IA: Internacionalizar todos los textos del asisten</td>
+</tr>
+<tr>
+<td>MAP-69</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>calidad, ia, roadmap-mayo-2026</td>
+<td>IA: Observabilidad — quitar console.log en prod, l</td>
+</tr>
+<tr>
+<td>MAP-71</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>backend, roadmap-mayo-2026, seguridad</td>
+<td>Seguridad: Implementar MAP-51 middleware de rol pa</td>
+</tr>
+<tr>
+<td>MAP-72</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>backend, reportes, roadmap-mayo-2026</td>
+<td>Deuda: Completar o archivar MAP-46 modelo DB repor</td>
+</tr>
+<tr>
+<td>MAP-73</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>devops, docs, roadmap-mayo-2026</td>
+<td>Documentación: Variables de entorno IA y reportes</td>
+</tr>
+<tr>
+<td>MAP-74</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>frontend, qa, roadmap-mayo-2026</td>
+<td>Tests automatizados: smoke de rutas críticas (auth</td>
+</tr>
+<tr>
+<td>MAP-75</td>
+<td>Epic</td>
+<td>Tareas por hacer</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>epic-calidad, ia, roadmap-mayo-2026</td>
+<td>EPIC — Hardening IA, seguridad y calidad (roadmap</td>
+</tr>
+<tr>
+<td>MAP-76</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Frontend: consolidar modo oscuro en filtros, sideb</td>
+</tr>
+<tr>
+<td>MAP-77</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Frontend: refinar UX movil de filtros en listados</td>
+</tr>
+<tr>
+<td>MAP-78</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Backend: robustecer eliminacion de usuarios con co</td>
+</tr>
+<tr>
+<td>MAP-79</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>-</td>
+<td>Backend: completar soporte de fecha de nacimiento</td>
+</tr>
+<tr>
+<td>MAP-83</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>actividades, frontend, moderación</td>
+<td>Frontend: Moderación de actividades (servicio, pan</td>
+</tr>
+<tr>
+<td>MAP-85</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>exposicion, sprint-8</td>
+<td>Exposición / Crear repositorio guía Proyecto-Inter</td>
+</tr>
+<tr>
+<td>MAP-86</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>exposicion, sprint-8</td>
+<td>Exposición / Completar README repo guía (módulos D</td>
+</tr>
+<tr>
+<td>MAP-87</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>exposicion, sprint-8</td>
+<td>Exposición / Actualizar Confluence (repos, arquite</td>
+</tr>
+<tr>
+<td>MAP-88</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>exposicion, sprint-8</td>
+<td>Exposición / Verificar despliegues producción (web</td>
+</tr>
+<tr>
+<td>MAP-89</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>exposicion, sprint-8</td>
+<td>Exposición / Últimos retoques README repo guía y c</td>
+</tr>
+<tr>
+<td>MAP-90</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>exposicion, sprint-8</td>
+<td>Exposición / Capturas docs/img y referencias en RE</td>
+</tr>
+<tr>
+<td>MAP-91</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>exposicion, sprint-8</td>
+<td>Exposición / PR URL repo en tabla exposiciones CPI</td>
+</tr>
+<tr>
+<td>MAP-92</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>exposicion, sprint-8</td>
+<td>Exposición / Exportar PDF Confluence y Jira a docs</td>
+</tr>
+<tr>
+<td>MAP-93</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>Ezequiel Vargas</td>
+<td>Medium</td>
+<td>exposicion, sprint-8</td>
+<td>Exposición / Guion y estructura presentación oral</td>
+</tr>
+<tr>
+<td>MAP-94</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>exposicion, sprint-8</td>
+<td>Exposición / Slides, demo y ensayo presentación (w</td>
+</tr>
+<tr>
+<td>MAP-95</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>planificacion, presentacion, sprint-8</td>
+<td>Preparar intervención de José para exposición (blo</td>
+</tr>
+<tr>
+<td>MAP-96</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>exposicion-2dam, presentacion, sprint-8</td>
+<td>Preparar demo técnica en vivo (API + Android + web</td>
+</tr>
+<tr>
+<td>MAP-98</td>
+<td>Tarea</td>
+<td>Finalizada</td>
+<td>José Antonio Domínguez González</td>
+<td>Medium</td>
+<td>confluence, jira, presentacion, sprint-8</td>
+<td>Exportar PDF de Confluence y PDF resumen Jira para</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. Cuellos de botella y bloqueos</h2>
+<blockquote>
+<p><strong>MAP-91 / PR tabla CPIFP:</strong> Comprobar que la URL del repo guía sustituye <code>PENDIENTE</code> en orden 7 del repositorio del centro.</p>
+<p><strong>MAP-90 / MAP-97 / Capturas:</strong> Validar que todas las imágenes del README existen en <code>docs/img/</code> (Android, Power BI, diagrama).</p>
+<p><strong>Épicas abiertas MAP-2, 4, 8, 54–57, 75:</strong> Contenedores de roadmap; no bloquean exposición pero generan ruido en métricas de cierre global.</p>
+<p><strong>MAP-75 Hardening IA:</strong> Incluye seguridad API key LLM, i18n asistente, moderación; trabajo post-exposición.</p>
+</blockquote>
+<hr />
+<h2>9. Próximos pasos recomendados</h2>
+<table>
+<thead>
+<tr>
+<th>Prioridad</th>
+<th>Acción</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alta</td>
+<td>Completar capturas pendientes en repo guía</td>
+<td>Equipo</td>
+</tr>
+<tr>
+<td>Alta</td>
+<td>PR URL en tabla exposiciones CPIFP</td>
+<td>Equipo</td>
+</tr>
+<tr>
+<td>Alta</td>
+<td>Ensayo presentación 15 min + plan B demo</td>
+<td>José + Ezequiel</td>
+</tr>
+<tr>
+<td>Media</td>
+<td>Cerrar épicas roadmap tras 5-jun</td>
+<td>Equipo</td>
+</tr>
+<tr>
+<td>Baja</td>
+<td>Activar Story Points en Jira para futuros sprints</td>
+<td>Equipo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10. Enlaces de referencia</h2>
+<ul>
+<li>Tablero Jira: https://maptuu.atlassian.net/jira/software/projects/MAP/boards</li>
+<li>Repo documentación: https://github.com/Ezequielvb/Proyecto-Intermodular-MappTuu</li>
+<li>Confluence MAP: https://maptuu.atlassian.net/wiki/spaces/MAP</li>
+<li>Guía exposición centro: https://github.com/CPIFPAlanTuring/exposiciones_proyecto_intermodular_25_26_2DAM_M</li>
+</ul>
+<hr />
+<p><em>Documento generado automáticamente desde datos Jira (proyecto MAP). Versión completa para evaluación 2º DAM.</em></p></body></html>
