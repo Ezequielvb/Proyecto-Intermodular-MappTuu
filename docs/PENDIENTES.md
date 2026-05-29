@@ -13,12 +13,12 @@ Elementos que la [guía del centro](https://github.com/CPIFPAlanTuring/exposicio
 | 5 | Capturas Android (×2) | Pendiente | `docs/img/09-android-login.png`, `docs/img/10-android-mapa.png` |
 | 6 | Captura Power BI (×1) | Pendiente | `docs/img/11-powerbi-dashboard.png` |
 
-## No inventado a propósito
+## Aclaraciones (no son pendientes del repo guía)
 
 | Tema | Motivo |
 |------|--------|
 | Usuarios/contraseñas de demo | No se publican credenciales en el repo por seguridad |
-| Informes Power BI (.pbix) | No localizados en los repos consultados |
+| Archivo `.pbix` de Power BI Desktop | El informe en formato `.pbix` no está versionado en GitHub; el repo [PythonMappTuu](https://github.com/Jose-AntonioT8/PythonMappTuu) sí incluye el script `export_firestore_to_powerbi.py` que genera los CSV para cargar en Power BI |
 | Plan de negocio EIE | No hay carpeta/documento específico en los repos de código |
 | Código fuente en repos privados | Requiere invitación GitHub a `Jose-AntonioT8` |
 
@@ -28,3 +28,4 @@ Elementos que la [guía del centro](https://github.com/CPIFPAlanTuring/exposicio
 - PDF Confluence versionado en `docs/pdf/`
 - Índice Confluence: `docs/confluence-indice.md`
 - Enlaces verificados: web, API, Swagger, Compodoc, APK pública en GitHub
+- Repo Python / Power BI enlazado: [PythonMappTuu](https://github.com/Jose-AntonioT8/PythonMappTuu) (`export_firestore_to_powerbi.py` → CSV)
