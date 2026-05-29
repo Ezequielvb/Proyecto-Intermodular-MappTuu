@@ -19,6 +19,7 @@ Imágenes referenciadas en el `README.md` principal.
 
 | Archivo | Contenido |
 |---------|-----------|
+| `00-diagrama-arquitectura.png` | Diagrama de flujo / arquitectura del ecosistema |
 | `09-android-login.png` | App Android — pantalla de inicio / login |
 | `10-android-mapa.png` | App Android — listado o mapa en móvil |
 | `11-powerbi-dashboard.png` | Dashboard Power BI |

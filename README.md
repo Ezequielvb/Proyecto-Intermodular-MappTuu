@@ -62,6 +62,10 @@ Guía orientada a usuarios no técnicos en Confluence: [MapTuu — Guía de la a
 
 Patrón de datos (web + API): **lecturas** en cliente con Firestore; **escrituras y reglas de dominio** vía HTTP a la API con token Firebase.
 
+### Diagrama de flujo (arquitectura)
+
+*Pendiente:* subir `docs/img/00-diagrama-arquitectura.png`.
+
 Diagrama ampliado en Confluence: [01 - Arquitectura general](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/24150017).
 
 ---
@@ -328,6 +332,7 @@ Resumen:
 
 - [x] PDF exportado de Confluence en `docs/pdf/confluence-maptuu.pdf`
 - [ ] PDF resumen Jira en `docs/pdf/jira-resumen.pdf`
+- [ ] Diagrama de flujo (arquitectura): `docs/img/00-diagrama-arquitectura.png`
 - [ ] Capturas Android: `docs/img/09-android-login.png`, `docs/img/10-android-mapa.png`
 - [ ] Captura Power BI: `docs/img/11-powerbi-dashboard.png`
 - [ ] URL de este repo en la [tabla del centro](https://github.com/CPIFPAlanTuring/exposiciones_proyecto_intermodular_25_26_2DAM_M#tabla-de-proyectos-participantes-y-url-del-repositorio) (sustituir `PENDIENTE` en orden 7)
