@@ -284,7 +284,7 @@ pip install -r requirements.txt && python export_firestore_to_powerbi.py
 
 | Entregable | Estado | Enlace / notas |
 |------------|--------|----------------|
-| **Resumen Jira (PDF)** | Pendiente | Exportar estadísticas del tablero en [maptuu.atlassian.net](https://maptuu.atlassian.net) y subir `docs/pdf/jira-resumen.pdf` |
+| **Resumen Jira (PDF)** | Completado | [docs/pdf/jira-resumen.pdf](docs/pdf/jira-resumen.pdf) · versión ampliada en [docs/pdf/jira-resumen.md](docs/pdf/jira-resumen.md) |
 
 ---
 
@@ -332,7 +332,7 @@ Lista detallada: **[docs/PENDIENTES.md](docs/PENDIENTES.md)**
 Resumen:
 
 - [x] PDF exportado de Confluence en `docs/pdf/confluence-maptuu.pdf`
-- [ ] PDF resumen Jira en `docs/pdf/jira-resumen.pdf`
+- [x] PDF resumen Jira en `docs/pdf/jira-resumen.pdf`
 - [ ] Diagrama de flujo (arquitectura): `docs/img/00-diagrama-arquitectura.png`
 - [ ] Capturas Android: `docs/img/09-android-login.png`, `docs/img/10-android-mapa.png`
 - [ ] Captura Power BI: `docs/img/11-powerbi-dashboard.png`

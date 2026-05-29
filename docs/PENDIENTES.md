@@ -8,7 +8,7 @@ Elementos que la [guía del centro](https://github.com/CPIFPAlanTuring/exposicio
 |---|------------|--------|-------------------|
 | 1 | URL en tabla exposiciones (orden 7) | Pendiente | PR a `exposiciones_proyecto_intermodular_25_26_2DAM_M` con `https://github.com/Ezequielvb/Proyecto-Intermodular-MappTuu` |
 | 2 | PDF documentación unificada (Confluence) | **Completado** | [docs/pdf/confluence-maptuu.pdf](pdf/confluence-maptuu.pdf) |
-| 3 | PDF resumen Jira | Pendiente | Jira → exportar tablero/estadísticas → `docs/pdf/jira-resumen.pdf` |
+| 3 | PDF resumen Jira | **Completado** | [docs/pdf/jira-resumen.pdf](pdf/jira-resumen.pdf) |
 | 4 | Diagrama de flujo (arquitectura) | Pendiente | `docs/img/00-diagrama-arquitectura.png` |
 | 5 | Capturas Android (×2) | Pendiente | `docs/img/09-android-login.png`, `docs/img/10-android-mapa.png` |
 | 6 | Captura Power BI (×1) | Pendiente | `docs/img/11-powerbi-dashboard.png` (captura para el README; el informe `.pbix` ya está en el repo privado) |
