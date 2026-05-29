@@ -212,10 +212,11 @@ Estructura siguiendo la plantilla del repositorio del centro: objetivos del mód
 **Evidencias:**
 - Repositorio de exportación: https://github.com/Jose-AntonioT8/PythonMappTuu
 - Script `export_firestore_to_powerbi.py` con uso de pandas
+- Informe Power BI Desktop: `MappTuu.pbix` (en la raíz del repo Python, privado)
 - Generación de CSV relacionales para Power BI (`users`, `activities`, `plans`, `reviews`, enlaces)
 - Documentación funcional en Confluence: [10 - Python MappTuu](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/27426817)
 
-**Limitaciones:** falta la captura del dashboard Power BI en `docs/img/11-powerbi-dashboard.png`.
+**Limitaciones:** falta la captura del dashboard en el README de exposición (`docs/img/11-powerbi-dashboard.png`). El tribunal necesita acceso al repo privado para descargar el `.pbix`.
 
 ---
 
@@ -226,7 +227,7 @@ Estructura siguiendo la plantilla del repositorio del centro: objetivos del mód
 | **Frontend Angular** | https://github.com/Jose-AntonioT8/vercelAngularMappTuu | Privado | Rama producción: `frontend` |
 | **Backend Node** | https://github.com/Jose-AntonioT8/vercelNodeMappTuu | Privado | Rama: `main` |
 | **Android** | https://github.com/Jose-AntonioT8/androidMappTuu | **Público** | Incluye `MappTuu.apk` en raíz |
-| **Python / Power BI** | https://github.com/Jose-AntonioT8/PythonMappTuu | Privado | `export_firestore_to_powerbi.py` |
+| **Python / Power BI** | https://github.com/Jose-AntonioT8/PythonMappTuu | Privado | `export_firestore_to_powerbi.py`, informe `MappTuu.pbix` |
 
 Este repositorio (**Proyecto-Intermodular-MappTuu**) es solo documentación de exposición; el código vive en los cuatro repos anteriores.
 
