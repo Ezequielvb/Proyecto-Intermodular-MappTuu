@@ -1,15 +1,16 @@
 # Pendientes — documentación de exposición MapTuu
 
-Elementos que la [guía del centro](https://github.com/CPIFPAlanTuring/exposiciones_proyecto_intermodular_25_26_2DAM_M) pide y que **aún no están** en este repositorio o no pudieron generarse automáticamente.
+Elementos que la [guía del centro](https://github.com/CPIFPAlanTuring/exposiciones_proyecto_intermodular_25_26_2DAM_M) pide y que **aún no están** en este repositorio.
 
 ## Obligatorios según la guía del centro
 
 | # | Entregable | Estado | Acción del equipo |
 |---|------------|--------|-------------------|
 | 1 | URL en tabla exposiciones (orden 7) | Pendiente | PR a `exposiciones_proyecto_intermodular_25_26_2DAM_M` con `https://github.com/Ezequielvb/Proyecto-Intermodular-MappTuu` |
-| 2 | PDF documentación unificada (Confluence) | Pendiente | En Confluence: espacio MAP → exportar a PDF → guardar como `docs/pdf/confluence-maptuu.pdf` |
-| 3 | PDF resumen Jira | Pendiente | Jira en maptuu.atlassian.net → exportar tablero/estadísticas → `docs/pdf/jira-resumen.pdf` |
-| 4 | Imágenes en repo | Pendiente | Capturas en `docs/img/` (ver `docs/img/README.md`) |
+| 2 | PDF documentación unificada (Confluence) | **Completado** | [docs/pdf/confluence-maptuu.pdf](pdf/confluence-maptuu.pdf) |
+| 3 | PDF resumen Jira | Pendiente | Jira → exportar tablero/estadísticas → `docs/pdf/jira-resumen.pdf` |
+| 4 | Capturas Android (×2) | Pendiente | `docs/img/09-android-login.png`, `docs/img/10-android-mapa.png` |
+| 5 | Captura Power BI (×1) | Pendiente | `docs/img/11-powerbi-dashboard.png` |
 
 ## No inventado a propósito
 
@@ -22,7 +23,7 @@ Elementos que la [guía del centro](https://github.com/CPIFPAlanTuring/exposicio
 
 ## Completado en esta documentación
 
-- README con índice, equipo, descripción, enlaces a 4 repos, producción, Confluence, módulos
+- README con índice, equipo, descripción, capturas web, módulos, repos, producción, Compodoc
+- PDF Confluence versionado en `docs/pdf/`
 - Índice Confluence: `docs/confluence-indice.md`
 - Enlaces verificados: web, API, Swagger, Compodoc, APK pública en GitHub
-- Estado real del merge PR #11 y revert de IA documentado

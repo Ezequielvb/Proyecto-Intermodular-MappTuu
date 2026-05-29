@@ -58,49 +58,65 @@ Centralizar en un solo lugar el descubrimiento de actividades, la planificación
 
 Guía orientada a usuarios no técnicos en Confluence: [MapTuu — Guía de la aplicación](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/24248485).
 
-### Diagrama de arquitectura (alto nivel)
-
-![Diagrama de arquitectura MapTuu](docs/img/00-diagrama-arquitectura.png)
-
-> Pendiente de añadir/actualizar `docs/img/00-diagrama-arquitectura.png` con la versión final del diagrama.
+### Arquitectura (alto nivel)
 
 Patrón de datos (web + API): **lecturas** en cliente con Firestore; **escrituras y reglas de dominio** vía HTTP a la API con token Firebase.
 
-Las **capturas de pantalla** del producto (requisito de la guía del centro) están en la [sección 3](#3-capturas-e-imágenes-del-producto), **antes** de la aportación por módulo.
+Diagrama ampliado en Confluence: [01 - Arquitectura general](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/24150017).
 
 ---
 
 ## 3. Capturas e imágenes del producto
 
-Capturas de la aplicación (guía del centro: imágenes embebidas directamente en el repo).
+### Landing
 
-### Landing / listado actividades
+![Landing](docs/img/01-landing.png)
 
-![Landing / listado actividades](docs/img/01-landing.png)
+### Perfil de usuario
 
-### Mapa (web)
+![Perfil de usuario](docs/img/02-Profile.png)
 
-Pendiente de subir `docs/img/02-mapa-web.png`.
+### Listado de actividades
 
-### Detalle de actividad + mapa
+![Listado de actividades](docs/img/03-Activity_List.png)
 
-Pendiente de subir `docs/img/03-detalle-actividad-mapa.png`.
+### Listado de planes
+
+![Listado de planes](docs/img/04-Plan_List.png)
+
+### Asistente IA
+
+![Asistente IA](docs/img/05-IA.png)
+
+### Acerca de nosotros
+
+![Acerca de nosotros](docs/img/06-About_Us.png)
+
+### Mapa web
+
+![Mapa web](docs/img/07-Map.png)
 
 ### Panel admin / reportes
 
-Pendiente de subir `docs/img/04-panel-admin-reportes.png`.
+![Panel admin y reportes](docs/img/08-Reports.png)
 
-### App Android
+### App Android — pantalla de inicio / login
 
-Pendiente de subir `docs/img/05-app-android.png`.
+*Pendiente:* subir `docs/img/09-android-login.png`.
 
-Instrucciones: [docs/img/README.md](docs/img/README.md).
+### App Android — listado o mapa en móvil
+
+*Pendiente:* subir `docs/img/10-android-mapa.png`.
+
+### Dashboard Power BI
+
+*Pendiente:* subir `docs/img/11-powerbi-dashboard.png`.
 
 ---
 
 ## 4. Qué aporta el proyecto en cada módulo
 
-Estructura siguiendo la plantilla del repositorio del centro: objetivos del modulo cubiertos, evidencias y limitaciones.
+Estructura siguiendo la plantilla del repositorio del centro: objetivos del módulo cubiertos, evidencias y limitaciones.
 
 ### Acceso a datos — Juan Antonio García Gómez
 
@@ -126,7 +142,7 @@ Estructura siguiendo la plantilla del repositorio del centro: objetivos del modu
 - Stack móvil: Kotlin, Jetpack Compose, Room, Retrofit, Hilt, Firebase Auth, Google Maps
 - Pantallas de app: listado/detalle, mapa, perfil y autenticación
 
-**Limitaciones:** el alcance móvil está centrado en modo visor; los flujos avanzados de gestión siguen en web.
+**Limitaciones:** el alcance móvil está centrado en modo visor; faltan las capturas `09-android-login.png` y `10-android-mapa.png` en el README.
 
 ---
 
@@ -152,7 +168,7 @@ Estructura siguiendo la plantilla del repositorio del centro: objetivos del modu
 - Frontend Angular + Tailwind: https://github.com/Jose-AntonioT8/vercelAngularMappTuu
 - Ajustes de interfaz responsive en vistas principales (landing, login, sign-up, detalle)
 - Uso de contraste de color y componentes visuales para mejorar legibilidad
-- Integración de datos exportados para consumo en Power BI (soporte desde interfaz/documentacion)
+- Integración de datos exportados para consumo en Power BI
 
 **Limitaciones:** no hay auditoría formal WCAG versionada en el repo.
 
@@ -195,7 +211,7 @@ Estructura siguiendo la plantilla del repositorio del centro: objetivos del modu
 - Generación de CSV relacionales para Power BI (`users`, `activities`, `plans`, `reviews`, enlaces)
 - Documentación funcional en Confluence: [10 - Python MappTuu](https://maptuu.atlassian.net/wiki/spaces/MAP/pages/27426817)
 
-**Limitaciones:** faltan capturas de dashboards Power BI en `docs/img/`.
+**Limitaciones:** falta la captura del dashboard Power BI en `docs/img/11-powerbi-dashboard.png`.
 
 ---
 
@@ -249,11 +265,13 @@ git clone https://github.com/Jose-AntonioT8/PythonMappTuu.git
 pip install -r requirements.txt && python export_firestore_to_powerbi.py
 ```
 
+---
+
 ## 7. Documentación unificada del proyecto (PDF)
 
 | Entregable | Estado | Enlace / notas |
 |------------|--------|----------------|
-| **PDF unificado (Confluence)** | **Pendiente en este repo** | Exportar manualmente el espacio MAP desde Confluence (PDF) y subirlo a `docs/pdf/` — ver [docs/PENDIENTES.md](docs/PENDIENTES.md) |
+| **PDF unificado (Confluence)** | Completado | [docs/pdf/confluence-maptuu.pdf](docs/pdf/confluence-maptuu.pdf) |
 
 ---
 
@@ -261,7 +279,7 @@ pip install -r requirements.txt && python export_firestore_to_powerbi.py
 
 | Entregable | Estado | Enlace / notas |
 |------------|--------|----------------|
-| **Resumen Jira (PDF)** | **Pendiente en este repo** | Proyecto gestionado en https://maptuu.atlassian.net (Jira). Falta exportar estadísticas del tablero y añadir `docs/pdf/jira-resumen.pdf` |
+| **Resumen Jira (PDF)** | Pendiente | Exportar estadísticas del tablero en [maptuu.atlassian.net](https://maptuu.atlassian.net) y subir `docs/pdf/jira-resumen.pdf` |
 
 ---
 
@@ -308,12 +326,11 @@ Lista detallada: **[docs/PENDIENTES.md](docs/PENDIENTES.md)**
 
 Resumen:
 
-- [ ] PDF exportado de Confluence en `docs/pdf/`
-- [ ] PDF resumen Jira en `docs/pdf/`
-- [ ] Capturas de pantalla en `docs/img/`
+- [x] PDF exportado de Confluence en `docs/pdf/confluence-maptuu.pdf`
+- [ ] PDF resumen Jira en `docs/pdf/jira-resumen.pdf`
+- [ ] Capturas Android: `docs/img/09-android-login.png`, `docs/img/10-android-mapa.png`
+- [ ] Captura Power BI: `docs/img/11-powerbi-dashboard.png`
 - [ ] URL de este repo en la [tabla del centro](https://github.com/CPIFPAlanTuring/exposiciones_proyecto_intermodular_25_26_2DAM_M#tabla-de-proyectos-participantes-y-url-del-repositorio) (sustituir `PENDIENTE` en orden 7)
-- [ ] Entregables específicos de EIE si el profesorado los requiere aparte de la descripción de producto
-- [ ] Re-evaluar merge del `feat(ia)` filtrado por pregunta (revertido en `frontend`)
 
 ---
 
